@@ -1,0 +1,33 @@
+# ─────────────────────────────────────────────
+# FullComicBuilder Backend — Test Profile Config
+# Used only for local unit/integration tests
+# ─────────────────────────────────────────────
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/fullcomicbuilder_test
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: test-client-id
+            client-secret: test-client-secret
+
+logging:
+  level:
+    root: INFO
+    com.fullcomicbuilder.backend: DEBUG
+
+app:
+  jwt:
+    secret: dGVzdC1zZWNyZXQta2V5LWZvci11bml0LXRlc3Rpbmctb25seS0zMmJ5dGVz
+    expiration-ms: 86400000
+  gcs:
+    bucket: test-bucket
+  aes:
+    # 32 bytes base64 for tests: "test-aes-secret-key-32bytes!!!!!"
+    secret: dGVzdC1hZXMtc2VjcmV0LWtleS0zMmJ5dGVzISEhISE=
+  cors:
+    allowed-origins: http://localhost:3000

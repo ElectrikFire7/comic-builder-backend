@@ -1,0 +1,28 @@
+# Build output
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment & Secrets
+.env
+service-account.json
+*.json.bak
+
+# Logs
+*.log
+
+# Java
+*.class
+*.jar
+*.war
+hs_err_pid*
+
+.env 
+.mvn/
